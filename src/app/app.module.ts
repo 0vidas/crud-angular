@@ -3,19 +3,28 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
 
-import{AngularFireModule} from "@angular/fire/compat";
-import{AngularFireDatabaseModule} from "@angular/fire/compat/database";
+import {AngularFireModule} from "@angular/fire/compat";
+import {AngularFireDatabaseModule} from "@angular/fire/compat/database";
 
-import{ enviar } from '../enviar.ts';
+import { environment }  from '../environment';
+import { ListContatoComponent } from './contato/list-contato/list-contato.component';
+import { AddContatoComponent } from './contato/add-contato/add-contato.component';
+import { EditContatoComponent } from './contato/edit-contato/edit-contato.component';
+
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ListContatoComponent,
+    AddContatoComponent,
+    EditContatoComponent
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(enviar.firebaseConfig),
+    AngularFireModule.initializeApp(environment.firebaseConfig),
     AngularFireDatabaseModule,
+    AppRoutingModule
   ],
   providers: [],
   bootstrap: [AppComponent]
