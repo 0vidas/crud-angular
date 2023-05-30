@@ -1,1 +1,146 @@
-<p>add-contato works!</p>
+<div class="pt-3 pb-2 mb-3 border-bottom">
+
+  <h2 class="h2">Adicionar Contato</h2>
+
+</div>
+
+<!-- HEADER -->
+
+<!-- FORMULÁRIO -->
+
+<form [formGroup]="contatoForm" (ngSubmit)="submitForm()" novalidate>
+
+  <!-- ADAPTA O TAMANHO DO FORMULÁRIO DE ACORDO COM A TELA-->
+
+  <div class="row">
+
+    <div class="col-lg-6 col-md-8 col-sm-12">
+
+      <!--CAMPO NOME -->
+
+      <div class="row">
+        <div class="col-md-12 mb-3">
+          <label
+
+            [ngClass]="{'text-danger': nome?.touched && nome?.invalid}"
+
+            for="nome" class="form-label">Nome</label>
+          <input
+
+            [ngClass]="{'is-invalid': nome?.touched && nome?.invalid, 'is-valid': nome?.touched && nome?.valid}"
+
+            type="text" id="nome" class="form-control" formControlName="nome" required/>
+
+          <!-- errors-->
+
+          <div class="invalid-feedback"><sup>*</sup>Nome obrigatório</div>
+
+        </div>
+
+      </div>
+
+      <!--  FIM DO CAMPO NOME -->
+
+      <!-- CAMPO IDADE -->
+
+      <div class="row">
+
+        <div class="col-md-12 mb-3">
+
+          <label
+
+            [ngClass]="{'text-danger': idade?.touched && idade?.invalid}"
+
+            for="idade" class="form-label">Idade</label>
+
+          <input
+
+            [ngClass]="{'is-invalid': idade?.touched && idade?.invalid, 'is-valid': idade?.touched && idade?.valid}"
+
+            type="number"
+
+            formControlName="idade"
+
+            class="form-control"
+
+            required
+
+          />
+
+          <!-- Validation FeedBack -->
+
+          <div class="invalid-feedback"><sup>*</sup>Idade obrigatório</div>
+
+        </div>
+
+      </div>
+
+      <!-- FIM DO CAMPO IDADE -->
+
+      <!-- CAMPO TELEFONE -->
+
+      <div class="row">
+
+        <div class="col-md-12 mb-3">
+
+          <label
+
+            [ngClass]="{'text-danger': telefone?.touched && telefone?.invalid}"
+
+            for="telefone" class="form-label">Telefone:</label>
+
+          <input
+
+            [ngClass]="{'is-invalid': telefone?.touched && telefone?.invalid, 'is-valid': telefone?.touched && telefone?.valid}"
+
+            type="text"
+
+            formControlName="telefone"
+
+            class="form-control"
+
+            required
+
+          />
+
+          <!-- Validation FeedBack -->
+
+          <div class="invalid-feedback"><sup>*</sup>Informe apenas números</div>
+
+        </div>
+
+      </div>
+
+      <!-- FIM CAMPO TELEFONE -->
+
+      <!-- BOTÕES DO FORMULÁRIO -->
+
+      <div class="form-group text-end">
+
+        <button type="button" class="btn btn-secondary mx-2" (click)="resetForm()">
+
+          Limpar
+
+        </button>
+
+        <button type="submit" class="btn btn-success mx-2" [disabled]="!contatoForm.valid">
+
+          Adicionar Contato
+
+        </button>
+
+      </div>
+
+      <!-- FIM DOS BOTÕES DO FORMULÁRIO -->
+
+    </div>
+
+  </div>
+
+ <!-- ADAPTA O TAMANHO DO FORMULÁRIO DE ACORDO COM A TELA-->
+
+</form>
+
+<!-- FORMULÁRIO -->
+
+
