@@ -1,1 +1,99 @@
-<p>list-contato works!</p>
+  <!-- TOPO -->
+
+<div class="d-flex justify-content-between
+
+            flex-wrap flex-md-nowrap align-items-center
+
+            pt-3 pb-2 mb-3 border-bottom">
+
+  <h2 class="h2">Lista de Contatos</h2>
+
+  <a routerLink="/add-contato" class="btn btn-success" *ngIf="!listaVazia"> Adicionar Contato</a>
+
+</div>
+
+<!-- CONTEUDO -->
+
+<div class="pricing-header mx-auto">
+
+  <!-- LOADING SPINNER -->
+
+  <div class="loadWrapper" *ngIf="mostrarLoader">
+
+    <div class="loader"></div>
+
+  </div>
+
+  <!-- LISTA VAZIA -->
+
+  <div class="text-center" *ngIf="listaVazia">
+
+    <p>Nenhum contato adicionado ainda</p>
+
+    <a routerLink="/add-contato" class="btn btn-success"> Adicionar Contato</a>
+
+  </div>
+
+  <!-- LISTA NORMAL -->
+
+  <div class="table-responsive" *ngIf="!listaVazia">
+
+    <table class="table table-bordered">
+
+      <thead>
+
+        <tr>
+
+          <th scope="col">#</th>
+
+          <th scope="col">Nome</th>
+
+          <th scope="col">autor</th>
+
+          <th scope="col">preco</th>
+
+          <th class="text-center" scope="col">Editar</th>
+
+        </tr>
+
+      </thead>
+
+      <tbody>
+
+        <tr *ngFor="let contato of listaContatos | paginate: { itemsPerPage: 8, currentPage: page};
+
+                    let i = index">
+
+          <th scope="row">{{i+1}}</th>
+
+          <td>{{contato.nome}}</td>
+
+          <td>{{contato.autor}}</td>
+
+          <td>{{contato.preco}}R$</td>
+
+          <td class="text-center action-block">
+
+            <span class="btn btn-outline-primary btn-sm"
+
+              routerLink="/edit-contato/{{contato.$key}}">Editar</span>
+
+              <span class="mx-2 btn btn-outline-danger btn-sm"
+
+               (click)="deleteContato(contato)">Remover</span>
+
+          </td>
+
+        </tr>
+
+      </tbody>
+
+    </table>
+
+    <pagination-controls class="text-end" previousLabel="Anterior" nextLabel="Próximo"
+
+     (pageChange)="page = $event"></pagination-controls>
+
+  </div>
+
+</div>

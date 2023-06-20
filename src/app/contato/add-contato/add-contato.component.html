@@ -24,7 +24,7 @@
 
             [ngClass]="{'text-danger': nome?.touched && nome?.invalid}"
 
-            for="nome" class="form-label">Nome</label>
+            for="nome" class="form-label">Nome do livro</label>
           <input
 
             [ngClass]="{'is-invalid': nome?.touched && nome?.invalid, 'is-valid': nome?.touched && nome?.valid}"
@@ -41,7 +41,7 @@
 
       <!--  FIM DO CAMPO NOME -->
 
-      <!-- CAMPO IDADE -->
+      <!-- CAMPO autor -->
 
       <div class="row">
 
@@ -49,17 +49,17 @@
 
           <label
 
-            [ngClass]="{'text-danger': idade?.touched && idade?.invalid}"
+            [ngClass]="{'text-danger': autor?.touched && autor?.invalid}"
 
-            for="idade" class="form-label">Idade</label>
+            for="autor" class="form-label">Autor</label>
 
           <input
 
-            [ngClass]="{'is-invalid': idade?.touched && idade?.invalid, 'is-valid': idade?.touched && idade?.valid}"
+            [ngClass]="{'is-invalid': autor?.touched && autor?.invalid, 'is-valid': autor?.touched && autor?.valid}"
 
-            type="number"
+            type="String"
 
-            formControlName="idade"
+            formControlName="autor"
 
             class="form-control"
 
@@ -69,15 +69,15 @@
 
           <!-- Validation FeedBack -->
 
-          <div class="invalid-feedback"><sup>*</sup>Idade obrigatório</div>
+          <div class="invalid-feedback"><sup>*</sup>autur obrigatório</div>
 
         </div>
 
       </div>
 
-      <!-- FIM DO CAMPO IDADE -->
+      <!-- FIM DO CAMPO autor -->
 
-      <!-- CAMPO TELEFONE -->
+      <!-- CAMPO preco -->
 
       <div class="row">
 
@@ -85,17 +85,17 @@
 
           <label
 
-            [ngClass]="{'text-danger': telefone?.touched && telefone?.invalid}"
+            [ngClass]="{'text-danger': preco?.touched && preco?.invalid}"
 
-            for="telefone" class="form-label">Telefone:</label>
+            for="preco" class="form-label">Perço</label>
 
           <input
 
-            [ngClass]="{'is-invalid': telefone?.touched && telefone?.invalid, 'is-valid': telefone?.touched && telefone?.valid}"
+            [ngClass]="{'is-invalid': preco?.touched && preco?.invalid, 'is-valid': preco?.touched && preco?.valid}"
 
             type="text"
 
-            formControlName="telefone"
+            formControlName="preco"
 
             class="form-control"
 
@@ -111,7 +111,7 @@
 
       </div>
 
-      <!-- FIM CAMPO TELEFONE -->
+      <!-- FIM CAMPO preco -->
 
       <!-- BOTÕES DO FORMULÁRIO -->
 

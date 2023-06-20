@@ -3,7 +3,7 @@ export interface Contato {
 
   nome: String;
 
-  idade: Number;
+  autor: String;
 
-  telefone: String;
+  preco: Number;
 }
